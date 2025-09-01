@@ -7,7 +7,8 @@ export const App = () => {
 
   return (
     <div>
-      <Heading />
+      <Heading attr='123'>Olá Mundo!</Heading>
+      <Heading >Teste...</Heading>
     </div>
   )
 }
