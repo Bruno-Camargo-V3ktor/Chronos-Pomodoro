@@ -5,6 +5,7 @@ import { Menu } from './components/Menu';
 import './styles/theme.css';
 import './styles/global.css';
 import { CountDown } from './components/Countdown';
+import { DefaultInput } from './components/DefaultInput';
 
 
 
@@ -27,8 +28,7 @@ export const App = () => {
       <Contianer>
         <form className='form' action="">
           <div className='formRow'>
-            <label htmlFor='input'>task</label>
-            <input id='input' type='text' />
+            <DefaultInput type='text' />
           </div>
 
           <div className='formRow'>
