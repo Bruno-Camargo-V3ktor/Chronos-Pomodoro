@@ -28,7 +28,13 @@ export const App = () => {
       <Contianer>
         <form className='form' action="">
           <div className='formRow'>
-            <DefaultInput labelText='Qualquer coisa' id='meuInput' type='text' />
+            <DefaultInput 
+              labelText='Qualquer coisa' 
+              id='meuInput' 
+              type='text'
+              placeholder='Digite algo'
+              defaultValue='Minha Tarefa'
+            />
           </div>
 
           <div className='formRow'>
