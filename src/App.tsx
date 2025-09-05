@@ -28,7 +28,7 @@ export const App = () => {
       <Contianer>
         <form className='form' action="">
           <div className='formRow'>
-            <DefaultInput type='text' />
+            <DefaultInput labelText='Qualquer coisa' id='meuInput' type='text' />
           </div>
 
           <div className='formRow'>
