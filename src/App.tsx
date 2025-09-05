@@ -9,6 +9,7 @@ import { DefaultInput } from './components/DefaultInput';
 import { Cycles } from './components/Cycles';
 import { DefaultButton } from './components/DefaultButton';
 import { PlayCircleIcon } from 'lucide-react';
+import { Footer } from './components/Footer';
 
 
 
@@ -52,6 +53,10 @@ export const App = () => {
             <DefaultButton icon={<PlayCircleIcon/>} />
           </div>
         </form>
+      </Contianer>
+
+      <Contianer>
+        <Footer />
       </Contianer>
     </>
   )
