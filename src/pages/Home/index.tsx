@@ -1,4 +1,4 @@
-import { Contianer } from "../../components/Container"
+import { Container } from "../../components/Container"
 import { CountDown } from "../../components/Countdown"
 import { MainForm } from "../../components/MainForm"
 import { MainTemplate } from "../../templates/MainTemplate"
@@ -6,13 +6,13 @@ import { MainTemplate } from "../../templates/MainTemplate"
 export const HomePage = () => {
     return (
         <MainTemplate>
-            <Contianer>
+            <Container>
                 <CountDown />
-            </Contianer>
+            </Container>
 
-            <Contianer>
+            <Container>
                 <MainForm />
-            </Contianer>
+            </Container>
         </MainTemplate>
     )
 }
