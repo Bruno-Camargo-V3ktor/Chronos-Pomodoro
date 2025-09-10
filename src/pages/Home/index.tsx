@@ -3,6 +3,7 @@ import { CountDown } from "../../components/Countdown"
 import { MainForm } from "../../components/MainForm"
 import { MainTemplate } from "../../templates/MainTemplate"
 
+
 export const HomePage = () => {
     return (
         <MainTemplate>
