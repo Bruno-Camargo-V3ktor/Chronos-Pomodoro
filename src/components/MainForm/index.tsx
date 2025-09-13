@@ -3,13 +3,14 @@ import { Cycles } from "../Cycles"
 import { DefaultButton } from "../DefaultButton"
 import { DefaultInput } from "../DefaultInput"
 import type React from "react"
-import { useState } from "react"
+import { useRef } from "react"
 
 export const MainForm = () => {
-  const [taskName, setTaskName] = useState('');
+  const taskNameInput = useRef(null);
 
   function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    
   }
   
   return (
@@ -22,8 +23,7 @@ export const MainForm = () => {
               type='text'
               placeholder='Digite algo'
               defaultValue='Minha Tarefa'
-              value={taskName}
-              onChange={ (e) => setTaskName(e.target.value) }
+              ref={taskNameInput}
             />
           </div>
 
