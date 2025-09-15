@@ -65,6 +65,7 @@ export const MainForm = () => {
               placeholder='Digite algo'
               defaultValue='Minha Tarefa'
               ref={taskNameInput}
+              disabled={!!state.activeTask}
             />
           </div>
 
