@@ -7,6 +7,7 @@ import { useRef } from "react"
 import type { TaskModel } from "../../models/TaskModel"
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext"
 import { TaskActionTypes } from "../../contexts/TaskContext/taskActions"
+import { Tips } from "../Tips"
 
 export const MainForm = () => {
   const { state, dispatch } = useTaskContext();
@@ -55,7 +56,7 @@ export const MainForm = () => {
           </div>
 
           <div className='formRow'>
-            <p>Proximo Intervalo a 25min</p>
+            <Tips />
           </div>
 
           { state.currentCycle > 0 &&
