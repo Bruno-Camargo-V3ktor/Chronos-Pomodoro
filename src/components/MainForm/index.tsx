@@ -8,7 +8,6 @@ import type { TaskModel } from "../../models/TaskModel"
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext"
 import { TaskActionTypes } from "../../contexts/TaskContext/taskActions"
 import { Tips } from "../Tips"
-import { TimerWorkerManager } from "../../works/TimerWorkerManager"
 
 export const MainForm = () => {
   const { state, dispatch } = useTaskContext();
@@ -40,8 +39,6 @@ export const MainForm = () => {
   function handleInterruptTask() {
     dispatch({type: TaskActionTypes.INTERRUPT_TASK});
   }
-
-  const worker = TimerWorkerManager.getInstance();
 
   return (
         <>
