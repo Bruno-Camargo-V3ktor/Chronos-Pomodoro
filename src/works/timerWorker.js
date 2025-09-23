@@ -9,7 +9,7 @@ self.onmessage = function(event) {
     const state = event.data;
     const {activeTask, secondsRemaining} = state;
 
-    const endDate = (activeTask.startDate * 1000) + secondsRemaining
+    const endDate = (activeTask.startDate ) + secondsRemaining * 1000
     
     const now = Date.now();
     let countDownSeconds = Math.ceil( (endDate - now) / 1000 );
