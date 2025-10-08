@@ -11,6 +11,8 @@ import { getTaskStatus } from "../../utils/getTaskStatus"
 import { sortTasks, type SortTasksOptions } from "../../utils/sortTask"
 import { useEffect, useState } from "react"
 import { TaskActionTypes } from "../../contexts/TaskContext/taskActions"
+import { toast } from "react-toastify"
+import { showMessage } from "../../adapters/showMessage"
 
 export const HistoryPage = () => {
     const { state, dispatch } = useTaskContext();
@@ -34,9 +36,14 @@ export const HistoryPage = () => {
     }
 
     function handlResetHistory() {
-        if (!confirm("Tem certeza")) return;
 
-        dispatch({ type: TaskActionTypes.RESET_STATE });
+        showMessage.dismiss();
+        showMessage.confirm('Tem Certeza?', confirmation => {
+            if (confirmation) {
+                dispatch({ type: TaskActionTypes.RESET_STATE });
+            }
+        })
+
     }
 
     useEffect(() => {
