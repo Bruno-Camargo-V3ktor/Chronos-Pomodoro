@@ -11,7 +11,6 @@ import { getTaskStatus } from "../../utils/getTaskStatus"
 import { sortTasks, type SortTasksOptions } from "../../utils/sortTask"
 import { useEffect, useState } from "react"
 import { TaskActionTypes } from "../../contexts/TaskContext/taskActions"
-import { toast } from "react-toastify"
 import { showMessage } from "../../adapters/showMessage"
 
 export const HistoryPage = () => {
