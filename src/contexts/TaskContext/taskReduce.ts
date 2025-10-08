@@ -2,6 +2,7 @@ import type { TaskStateModel } from "../../models/TaskStateModel";
 import { formatSecondsToMinutes } from "../../utils/formatSecondsToMinutes";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
+import { initialState } from "./initialTaskState";
 import type { TaskActionModel } from "./taskActions";
 import { TaskActionTypes } from "./taskActions";
 
@@ -28,7 +29,7 @@ export function taskReduce(state: TaskStateModel, action: TaskActionModel): Task
                 formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining),
                 tasks: [...state.tasks, newTask]
             };
-        
+
         }
 
         case TaskActionTypes.INTERRUPT_TASK: {
@@ -37,11 +38,11 @@ export function taskReduce(state: TaskStateModel, action: TaskActionModel): Task
                 activeTask: null,
                 secondsRemaining: 0,
                 formattedSecondsRemaining: '00:00',
-                tasks: state.tasks.map((task) => { 
-                      if (state.activeTask && state.activeTask.id === task.id) {
+                tasks: state.tasks.map((task) => {
+                    if (state.activeTask && state.activeTask.id === task.id) {
                         state.activeTask.interruptDate = Date.now();
-                      }
-                      return task; 
+                    }
+                    return task;
                 })
             };
         }
@@ -52,11 +53,11 @@ export function taskReduce(state: TaskStateModel, action: TaskActionModel): Task
                 activeTask: null,
                 secondsRemaining: 0,
                 formattedSecondsRemaining: '00:00',
-                tasks: state.tasks.map((task) => { 
-                      if (state.activeTask && state.activeTask.id === task.id) {
+                tasks: state.tasks.map((task) => {
+                    if (state.activeTask && state.activeTask.id === task.id) {
                         state.activeTask.completeDate = Date.now();
-                      }
-                      return task; 
+                    }
+                    return task;
                 })
             };
         }
@@ -67,6 +68,10 @@ export function taskReduce(state: TaskStateModel, action: TaskActionModel): Task
                 secondsRemaining: action.playload.secondsRemaining,
                 formattedSecondsRemaining: formatSecondsToMinutes(action.playload.secondsRemaining)
             }
+        }
+
+        case TaskActionTypes.RESET_STATE: {
+            return { ...initialState }
         }
     }
 
