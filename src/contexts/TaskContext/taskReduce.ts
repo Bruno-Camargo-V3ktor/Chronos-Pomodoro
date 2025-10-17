@@ -73,6 +73,10 @@ export function taskReduce(state: TaskStateModel, action: TaskActionModel): Task
         case TaskActionTypes.RESET_STATE: {
             return { ...initialState }
         }
+
+        case TaskActionTypes.CHANGE_SETTINGS: {
+            return { ...state, config:{...action.playload} }
+        }
     }
 
     return state;
