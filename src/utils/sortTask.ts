@@ -1,4 +1,4 @@
-import { TaskModel } from '../models/TaskModel';
+import type { TaskModel } from '../models/TaskModel';
 
 export type SortTasksOptions = {
     tasks: TaskModel[];
